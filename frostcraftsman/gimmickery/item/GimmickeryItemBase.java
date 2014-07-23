@@ -20,7 +20,7 @@ public class GimmickeryItemBase extends Item{
 	 * @param par2Str 设置玩家看到的名称 
 	 */
 	public void st(String par1Str,String par2Str) {
-		if(par1Str != " ") {
+		if(par1Str != "") {
 			this.setUnlocalizedName(par1Str);
 			this.setTextureName("gimmickery:" + par1Str + ".png");
 			LanguageRegistry.addName(this, par2Str);
