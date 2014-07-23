@@ -9,7 +9,7 @@ public class ItemWoodSkeletonFrameG extends GimmickeryItemBase
 	public ItemWoodSkeletonFrameG(int id) 
 	{
 		super(id);
-		this.st("WoodSkeletonFrame","æœ¨è´¨äººå¶éª¨æ¶");
+		this.st("WoodSkeletonFrame","Ä¾ÖÊÈËÅ¼¹Ç¼Ü");
 		this.setCreativeTab(Gimmickery.gct);
 		this.setMaxStackSize(64);
 	}

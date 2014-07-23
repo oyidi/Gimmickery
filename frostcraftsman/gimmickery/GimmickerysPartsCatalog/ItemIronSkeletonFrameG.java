@@ -9,7 +9,7 @@ public class ItemIronSkeletonFrameG extends GimmickeryItemBase
 	public ItemIronSkeletonFrameG(int id) 
 	{
 		super(id);
-		this.st("StoneSkeletonFrame","石质人偶骨架");
+		this.st("IronSkeletonFrame","铁质人偶骨架");
 		this.setCreativeTab(Gimmickery.gct);
 		this.setMaxStackSize(64);
 	}

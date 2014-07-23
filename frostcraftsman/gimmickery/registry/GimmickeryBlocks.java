@@ -12,6 +12,6 @@ public class GimmickeryBlocks {
 	public static BlockPowerSourceG PowerSourceBlock;
 
 	public static void init() {
-		PowerSourceBlock = new BlockPowerSourceG(6500, Material.iron);
+		PowerSourceBlock = new BlockPowerSourceG(3500, Material.iron);
 	}
 }

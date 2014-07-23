@@ -9,7 +9,7 @@ public class ItemGoldMagicSkinG extends GimmickeryItemBase
 	public ItemGoldMagicSkinG(int id) 
 	{
 		super(id);
-		this.st("StoneWheelGear","金质人偶皮肤");
+		this.st("GoldMagicSkin","金质人偶皮肤");
 		this.setCreativeTab(Gimmickery.gct);
 		this.setMaxStackSize(64);//最大堆叠默认64，可省略
 		// TODO Auto-generated constructor stub

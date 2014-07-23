@@ -9,7 +9,7 @@ public class ItemIronWheelGearG extends GimmickeryItemBase
 	public ItemIronWheelGearG(int id) 
 	{
 		super(id);
-		this.st("StoneWheelGear","石质齿轮");
+		this.st("IronWheelGear","铁质齿轮");
 		this.setCreativeTab(Gimmickery.gct);
 		this.setMaxStackSize(64);//最大堆叠默认64，可省略
 		// TODO Auto-generated constructor stub
