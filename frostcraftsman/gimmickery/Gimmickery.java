@@ -21,7 +21,7 @@ public class Gimmickery {
 	
 	public static final String VERSION = "0.0.1";
 	public static Logger log = Logger.getLogger("gimmickery");
-	public static CreativeTabs cct = new GimmickeryCreativeTabs("Gimmickery");
+	public static CreativeTabs gct = new GimmickeryCreativeTabs("Gimmickery");
 	
 	@Instance("gimmickery")
     public static Gimmickery instance;
