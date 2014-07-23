@@ -1,6 +1,7 @@
 package net.frostcraftsman.gimmickery.registry;
 
 import net.frostcraftsman.gimmickery.GimmickerysPartsCatalog.*;
+import net.frostcraftsman.gimmickery.GimmickerysPartsCatalog.ItemWoodWheelGearG;
 import net.frostcraftsman.gimmickery.item.*;
 
 /**
