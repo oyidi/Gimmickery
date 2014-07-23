@@ -19,7 +19,7 @@ public class GimmickeryCommonProxy {
 	 * 执行第2阶段的加载行为。
 	 */
 	public void init() {
-		LanguageRegistry.instance().addStringLocalization("itemGroup.Gimmickery", "机巧"); //创造模式栏的名称
+		LanguageRegistry.instance().addStringLocalization("itemGroup.Gimmickery", "Gimmickery"); //创造模式栏的名称
 	}
 	    
 	/**
