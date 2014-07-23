@@ -22,7 +22,7 @@ public class GimmickeryItemBase extends Item{
 	public void st(String par1Str,String par2Str) {
 		if(par1Str != " ") {
 			this.setUnlocalizedName(par1Str);
-			this.setTextureName("gimmickery:" + par1Str + ".png");
+			this.setTextureName("gimmickery:" + par1Str);
 			LanguageRegistry.addName(this, par2Str);
 		}
 	}
