@@ -45,7 +45,7 @@ public class GimmickeryItems
 		DiamondWheelGear = new ItemDiamondWheelGearG(7012);
 		DiamondSkeletonFrame = new ItemDiamondSkeletonFrameG(7013);
 		DiamondMagicSkin = new ItemDiamondMagicSkinG(7014);
-		EmptyIntelligenceCore = new ItemEmptyIntelligenceCoreG(7006);
-		ElementaryMagicLubeOil = new ItemElementaryMagicLubeOilG(7007);
+		EmptyIntelligenceCore = new ItemEmptyIntelligenceCoreG(7015);
+		ElementaryMagicLubeOil = new ItemElementaryMagicLubeOilG(7016);
     }
 }
