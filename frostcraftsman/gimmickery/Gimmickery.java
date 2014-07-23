@@ -1,8 +1,11 @@
 package net.frostcraftsman.gimmickery;
 
+import java.util.Map;
 import java.util.logging.Logger;
 
+import net.frostcraftsman.gimmickery.entity.EntityWoodKarakuriNingyG;
 import net.frostcraftsman.gimmickery.proxy.GimmickeryCommonProxy;
+import net.frostcraftsman.gimmickery.registry.GimmickeryBlocks;
 import net.frostcraftsman.gimmickery.registry.GimmickeryItems;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.FMLLog;
@@ -39,12 +42,13 @@ public class Gimmickery {
 	     log.info("Starting Gimmickery " + Gimmickery.VERSION);
 	     
 	     GimmickeryItems.init();
+	     GimmickeryBlocks.init();
 	     proxy.preInit();
 	}
 	 
 	@EventHandler
 	public void load(FMLInitializationEvent event)
-	{
+	{	
 		 proxy.init();
 	}
 	 
