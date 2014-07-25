@@ -9,7 +9,7 @@ import net.frostcraftsman.gimmickery.item.*;
  */
 public class GimmickeryItems 
 {
-	public static ItemWoodKarakuriNingyG WoodKarakuriNingy;
+	
 	public static ItemWoodWheelGearG WoodWheelGear;
 	public static ItemWoodSkeletonFrameG WoodSkeletonFrame;
 	public static ItemWoodMagicSkinG WoodMagicSkin;
@@ -46,7 +46,6 @@ public class GimmickeryItems
 		DiamondSkeletonFrame = new ItemDiamondSkeletonFrameG(7013);
 		DiamondMagicSkin = new ItemDiamondMagicSkinG(7014);
 		EmptyIntelligenceCore = new ItemEmptyIntelligenceCoreG(7015);
-		WoodKarakuriNingy = new ItemWoodKarakuriNingyG(7016);
-		ElementaryMagicLubeOil = new ItemElementaryMagicLubeOilG(7017);
+		ElementaryMagicLubeOil = new ItemElementaryMagicLubeOilG(7016);
     }
 }
