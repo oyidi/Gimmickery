@@ -20,6 +20,7 @@ public class GimmickeryCommonProxy {
 	 */
 	public void init() {
 		LanguageRegistry.instance().addStringLocalization("itemGroup.Gimmickery", "机巧"); //创造模式栏的名称
+		LanguageRegistry.instance().addStringLocalization("entity.WoodKarakuriNingy.name","木质人偶");
 	}
 	    
 	/**
@@ -28,6 +29,12 @@ public class GimmickeryCommonProxy {
 	public void postInit() {
 		
 	}
+	
+	 public void registerRenderThings() {
+     }
+     
+     public void registerSound() {
+     }
 
 }
 
