@@ -8,6 +8,7 @@ import net.frostcraftsman.gimmickery.proxy.GimmickeryCommonProxy;
 import net.frostcraftsman.gimmickery.registry.GimmickeryBlocks;
 import net.frostcraftsman.gimmickery.registry.GimmickeryItems;
 import net.minecraft.creativetab.CreativeTabs;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -25,6 +26,8 @@ public class Gimmickery {
 	public static final String VERSION = "0.0.1";
 	public static Logger log = Logger.getLogger("gimmickery");
 	public static CreativeTabs gct = new GimmickeryCreativeTabs("Gimmickery");
+	
+
 	
 	@Instance("gimmickery")
     public static Gimmickery instance;
