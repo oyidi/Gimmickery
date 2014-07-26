@@ -2,7 +2,7 @@ package net.frostcraftsman.gimmickery.proxy;
 
 import net.frostcraftsman.gimmickery.entity.EntityWoodKarakuriNingyG;
 import net.frostcraftsman.gimmickery.event.KarakuriNingySoundEvent;
-import net.frostcraftsman.gimmickery.model.ModelCrital;
+import net.frostcraftsman.gimmickery.model.ModelCristal;
 import net.frostcraftsman.gimmickery.model.ModelRailgun;
 import net.frostcraftsman.gimmickery.render.RenderWoodKarakuriNingyG;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,7 +25,7 @@ public class GimmickeryClientProxy extends GimmickeryCommonProxy{
     @Override
     public void registerRenderThings() 
     {
-            RenderingRegistry.registerEntityRenderingHandler(EntityWoodKarakuriNingyG.class, new RenderWoodKarakuriNingyG(new ModelCrital(), 0.5F));//the 0.5F is the shadowsize
+            RenderingRegistry.registerEntityRenderingHandler(EntityWoodKarakuriNingyG.class, new RenderWoodKarakuriNingyG(new ModelCristal(), 0.5F));//the 0.5F is the shadowsize
     		System.out.printf("233");
     }
     
