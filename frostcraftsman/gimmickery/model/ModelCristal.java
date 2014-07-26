@@ -27,32 +27,32 @@ public class ModelCristal extends GimmickeryModelBase
   
   public ModelCristal()
   {
-    textureWidth = 64;
-    textureHeight = 32;
-    setTextureOffset("Piece1.goldchip1", 0, 0);
-    setTextureOffset("Piece1.goldchip2", 0, 0);
-    setGlScale(0.9F,2.0F,0.9F);
+	  textureWidth = 64;
+	  textureHeight = 32;
+	  setTextureOffset("Piece1.goldchip1", 0, 0);
+	  setTextureOffset("Piece1.goldchip2", 0, 0);
+	  setGlScale(0.9F,2.0F,0.9F);
       Cristal = new ModelRenderer(this, 0, 0);
       Cristal.addBox(-8F, -8F, -8F, 16, 16, 16);
       Cristal.setRotationPoint(0F, -3F, 0F);
-      Cristal.setTextureSize(64, 32);
       Cristal.mirror = true;
       setRotation(Cristal, 0.7853982F, 0F, 0.6154729F);
-    Piece1 = new ModelRenderer(this, "Piece1");
-    Piece1.setRotationPoint(0F, 0F, 0F);
-    setRotation(Piece1, 0F, 0F, 0F);
-    Piece1.mirror = true;
+      Piece1 = new ModelRenderer(this, "Piece1");
+      Piece1.setRotationPoint(0F, 0F, 0F);
+      setRotation(Piece1, 0F, 0F, 0F);
+      Piece1.mirror = true;
       Piece1.addBox("goldchip1", 16F, -12F, -2F, 1, 10, 6);
       Piece1.addBox("goldchip2", -16F, -11F, -4F, 1, 10, 6);
+      Cristal.addChild(Piece1);
   }
   
-  public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
+  public void render()
   {
-    super.render(entity, f, f1, f2, f3, f4, f5);
-    for(Object box:boxList){
-    	ModelRenderer modelbox = (ModelRenderer)box;
-    	modelbox.render(1.0F);
-    }
+	  GL11.glPushMatrix();
+	  GL11.glScalef(1F,1F,1F);
+	  this.Cristal.render(0.0875F);
+	  GL11.glScalef(this.GlScaleX, this.GlScaleY, this.GlScaleZ);
+	  GL11.glPopMatrix();
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)
