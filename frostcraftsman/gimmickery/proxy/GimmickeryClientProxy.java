@@ -3,6 +3,7 @@ package net.frostcraftsman.gimmickery.proxy;
 import net.frostcraftsman.gimmickery.entity.EntityWoodKarakuriNingyG;
 import net.frostcraftsman.gimmickery.event.KarakuriNingySoundEvent;
 import net.frostcraftsman.gimmickery.model.ModelCristal;
+import net.frostcraftsman.gimmickery.model.ModelPrinnyBlue;
 import net.frostcraftsman.gimmickery.model.ModelRailgun;
 import net.frostcraftsman.gimmickery.render.MuiltyFaceBlockRender;
 import net.frostcraftsman.gimmickery.render.RenderWoodKarakuriNingyG;
@@ -17,7 +18,7 @@ public class GimmickeryClientProxy extends GimmickeryCommonProxy{
     
     public void init() {
         super.init();
-        RenderingRegistry.registerBlockHandler(new MuiltyFaceBlockRender(new ModelCristal(), 0.2F));
+		RenderingRegistry.registerBlockHandler(new MuiltyFaceBlockRender(new ModelCristal(), 0.2F));
     }
     
     public void postInit() {
@@ -27,7 +28,7 @@ public class GimmickeryClientProxy extends GimmickeryCommonProxy{
     @Override
     public void registerRenderThings() 
     {
-            RenderingRegistry.registerEntityRenderingHandler(EntityWoodKarakuriNingyG.class, new RenderWoodKarakuriNingyG(new ModelCristal(), 0.5F));//the 0.5F is the shadowsize
+            RenderingRegistry.registerEntityRenderingHandler(EntityWoodKarakuriNingyG.class, new RenderWoodKarakuriNingyG(new ModelPrinnyBlue(), 0.5F));//the 0.5F is the shadowsize
     		System.out.printf("233");
     }
     
