@@ -14,9 +14,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCristalTileEntity extends TileEntitySpecialRenderer {
 	private static final ResourceLocation texture = GimmickeryClientProps.TEX_CRISTAL;
     public static RenderCristalTileEntity cristalRenderer;
-    public RenderCristalTileEntity(){
-    	super();
-    }
+    ModelCristal modelcristal=new ModelCristal();
+    @Override
     public void setTileEntityRenderer(TileEntityRenderer par1TileEntityRenderer)
     {
         super.setTileEntityRenderer(par1TileEntityRenderer);
@@ -35,7 +34,7 @@ public class RenderCristalTileEntity extends TileEntitySpecialRenderer {
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(-1.0F, -1.0F, 1.0F);
         GL11.glEnable(GL11.GL_ALPHA_TEST);
-        new ModelCristal().render((Entity)null, 0.0F, 0.0F, 0.0F, -1F, 0.0F, f);
+        modelcristal.render((Entity)null, 0.0F, 0.0F, 0.0F, -1F, 0.0F, f);
         GL11.glPopMatrix();
 	}
 }

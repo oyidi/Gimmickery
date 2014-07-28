@@ -31,11 +31,11 @@ public class ModelCristal extends GimmickeryModelBase
   
     public ModelCristal()
     {
-  	  textureWidth = 64;
-  	  textureHeight = 32;
-  	  setTextureOffset("Piece1.goldchip1", 0, 0);
-  	  setTextureOffset("Piece1.goldchip2", 0, 0);
-  	  setGlScale(0.9F,2.0F,0.9F);
+  	  	textureWidth = 64;
+  	  	textureHeight = 32;
+  	  	setTextureOffset("Piece1.goldchip1", 0, 0);
+  	  	setTextureOffset("Piece1.goldchip2", 0, 0);
+  	  	setGlScale(0.9F,2.0F,0.9F);
         Cristal = new ModelRenderer(this, 0, 0);
         Cristal.addBox(-8F, -8F, -8F, 16, 16, 16);
         Cristal.setRotationPoint(0F, -3F, 0F);
@@ -54,8 +54,6 @@ public class ModelCristal extends GimmickeryModelBase
   public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
   {
 	  this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
-	  TextureManager renderEngine = Minecraft.getMinecraft().renderEngine;
-	  renderEngine.bindTexture(GimmickeryClientProps.TEX_CRISTAL);
 	  Cristal.render(par7);
   }
   

@@ -3,6 +3,7 @@ package net.frostcraftsman.gimmickery.tileentity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.frostcraftsman.gimmickery.model.ModelCristal;
+import net.frostcraftsman.gimmickery.render.RenderCristalTileEntity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
@@ -13,7 +14,7 @@ public class CristalTileEntity extends TileEntity {
 	private int cristalRotation;
 	@Override
 	public void updateEntity(){
-		System.out.println('a');
+		
 	}
 
 	public void writeToNBT(NBTTagCompound par1NBTTagCompound)

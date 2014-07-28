@@ -35,7 +35,9 @@ public class BlockPowerSourceG extends GimmickeryBlockBase{
 	public void onBlockAdded(World par1World, int par2, int par3, int par4)
     {
         super.onBlockAdded(par1World, par2, par3, par4);
-        par1World.addTileEntity(new CristalTileEntity());
+        System.out.println(1);
+        par1World.setBlockTileEntity(par2, par3, par4, createTileEntity(par1World,par1World.getBlockMetadata(par2, par3, par4)));
+        System.out.println(2);
     }
 	@Override
 	public boolean hasTileEntity(){
@@ -47,9 +49,11 @@ public class BlockPowerSourceG extends GimmickeryBlockBase{
         par1World.removeBlockTileEntity(par2, par3, par4);
     }
 	@Override
-	public boolean onBlockEventReceived(World par1World, int par2, int par3, int par4, int par5, int par6)
+    public boolean onBlockEventReceived(World par1World, int par2, int par3, int par4, int par5, int par6)
     {
-        return false;
+        super.onBlockEventReceived(par1World, par2, par3, par4, par5, par6);
+        TileEntity tileentity = par1World.getBlockTileEntity(par2, par3, par4);
+        return tileentity != null ? tileentity.receiveClientEvent(par5, par6) : false;
     }
 	
 	public boolean isOpaqueCube()
