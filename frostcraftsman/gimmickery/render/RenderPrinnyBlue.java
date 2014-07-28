@@ -6,13 +6,12 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
-
 @SideOnly(Side.CLIENT)
-public class RenderWoodKarakuriNingyG extends GimmickeryRenderLivingBase{
+public class RenderPrinnyBlue extends GimmickeryRenderLivingBase{
 
-	private static final ResourceLocation WoodKarakuriNingy_Texture = new ResourceLocation("gimmickery:textures/entity/PrinnyBlue.png");
+	private static final ResourceLocation PrinnyBlue_Texture = new ResourceLocation("gimmickery:textures/entity/PrinnyBlue.png");
 	
-	public RenderWoodKarakuriNingyG(ModelBase par1ModelBase, float par2) {
+	public RenderPrinnyBlue(ModelBase par1ModelBase, float par2) {
 		super(par1ModelBase, par2);
 		// TODO Auto-generated constructor stub
 	}
@@ -20,6 +19,7 @@ public class RenderWoodKarakuriNingyG extends GimmickeryRenderLivingBase{
 	@Override
     protected ResourceLocation getEntityTexture(Entity par1Entity)
     {
-        return WoodKarakuriNingy_Texture;
+        return PrinnyBlue_Texture;
     }
 }
+

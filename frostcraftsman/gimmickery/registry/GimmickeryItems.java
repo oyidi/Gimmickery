@@ -27,12 +27,14 @@ public class GimmickeryItems
 	public static ItemDiamondMagicSkinG DiamondMagicSkin;
 	public static ItemEmptyIntelligenceCoreG EmptyIntelligenceCore;
 	public static ItemElementaryMagicLubeOilG ElementaryMagicLubeOil;
+	public static ItemPrinnyBlue PrinnyBlue;
 	
 	public static void init() 
 	{
 		WoodWheelGear = new ItemWoodWheelGearG(7000);
 		WoodSkeletonFrame = new ItemWoodSkeletonFrameG(7001);
 		WoodMagicSkin = new ItemWoodMagicSkinG(7002);
+		WoodKarakuriNingy = new ItemWoodKarakuriNingyG(7016);
 		StoneWheelGear = new ItemStoneWheelGearG(7003);
 		StoneSkeletonFrame = new ItemStoneSkeletonFrameG(7004);
 		StoneMagicSkin = new ItemStoneMagicSkinG(7005);
@@ -46,7 +48,7 @@ public class GimmickeryItems
 		DiamondSkeletonFrame = new ItemDiamondSkeletonFrameG(7013);
 		DiamondMagicSkin = new ItemDiamondMagicSkinG(7014);
 		EmptyIntelligenceCore = new ItemEmptyIntelligenceCoreG(7015);
-		WoodKarakuriNingy = new ItemWoodKarakuriNingyG(7016);
 		ElementaryMagicLubeOil = new ItemElementaryMagicLubeOilG(7017);
+		PrinnyBlue = new ItemPrinnyBlue(7018);
     }
 }
