@@ -8,10 +8,14 @@ import net.frostcraftsman.gimmickery.model.ModelCristal;
 import net.frostcraftsman.gimmickery.model.ModelPrinnyBlue;
 import net.frostcraftsman.gimmickery.model.ModelRailgun;
 import net.frostcraftsman.gimmickery.render.MuiltyFaceBlockRender;
+import net.frostcraftsman.gimmickery.render.RenderCristalTileEntity;
 import net.frostcraftsman.gimmickery.render.RenderPrinnyBlue;
 import net.frostcraftsman.gimmickery.render.RenderWoodKarakuriNingyG;
+import net.frostcraftsman.gimmickery.tileentity.CristalTileEntity;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GimmickeryClientProxy extends GimmickeryCommonProxy{
 
@@ -19,9 +23,12 @@ public class GimmickeryClientProxy extends GimmickeryCommonProxy{
         super.preInit();
     }
     
-    public void init() {
+	public void init() 
+	{
         super.init();
-		RenderingRegistry.registerBlockHandler(new MuiltyFaceBlockRender(new ModelCristal(), 0.2F));
+        RenderingRegistry.registerBlockHandler(new MuiltyFaceBlockRender());
+        GameRegistry.registerTileEntity(CristalTileEntity.class, "TileEntityCristal");
+        ClientRegistry.bindTileEntitySpecialRenderer(CristalTileEntity.class, new RenderCristalTileEntity());
     }
     
     public void postInit() {

@@ -13,46 +13,50 @@ package net.frostcraftsman.gimmickery.model;
 
 import org.lwjgl.opengl.GL11;
 
+import net.frostcraftsman.gimmickery.proxy.GimmickeryClientProps;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCristal extends GimmickeryModelBase
 {
   //fields
     ModelRenderer Cristal;
-    ModelRenderer Piece1;
+    ModelRenderer goldchip1;
+    ModelRenderer goldchip2;
   
-  public ModelCristal()
-  {
-	  textureWidth = 64;
-	  textureHeight = 32;
-	  setTextureOffset("Piece1.goldchip1", 0, 0);
-	  setTextureOffset("Piece1.goldchip2", 0, 0);
-	  setGlScale(0.9F,2.0F,0.9F);
-      Cristal = new ModelRenderer(this, 0, 0);
-      Cristal.addBox(-8F, -8F, -8F, 16, 16, 16);
-      Cristal.setRotationPoint(0F, -3F, 0F);
-      Cristal.mirror = true;
-      setRotation(Cristal, 0.7853982F, 0F, 0.6154729F);
-      Piece1 = new ModelRenderer(this, "Piece1");
-      Piece1.setRotationPoint(0F, 0F, 0F);
-      setRotation(Piece1, 0F, 0F, 0F);
-      Piece1.mirror = true;
-      Piece1.addBox("goldchip1", 16F, -12F, -2F, 1, 10, 6);
-      Piece1.addBox("goldchip2", -16F, -11F, -4F, 1, 10, 6);
-      Cristal.addChild(Piece1);
-  }
+    public ModelCristal()
+    {
+  	  textureWidth = 64;
+  	  textureHeight = 32;
+  	  setTextureOffset("Piece1.goldchip1", 0, 0);
+  	  setTextureOffset("Piece1.goldchip2", 0, 0);
+  	  setGlScale(0.9F,2.0F,0.9F);
+        Cristal = new ModelRenderer(this, 0, 0);
+        Cristal.addBox(-8F, -8F, -8F, 16, 16, 16);
+        Cristal.setRotationPoint(0F, -3F, 0F);
+        Cristal.mirror = true;
+        setRotation(Cristal, 0.7853982F, 0F, 0.6154729F);
+        goldchip1 = new ModelRenderer(this,0,0);
+        goldchip2 = new ModelRenderer(this,0,0);
+        goldchip1.addBox(16F, -12F, -2F, 1, 10, 6);
+        setRotation(goldchip1,0,0,0);
+        goldchip2.addBox(-16F, -11F, -4F, 1, 10, 6);
+        setRotation(goldchip2,0,0,0);
+        Cristal.addChild(goldchip1);
+        Cristal.addChild(goldchip2);
+    }
   
-  public void render()
+  public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
   {
-	  GL11.glPushMatrix();
-	  GL11.glScalef(1F,1F,1F);
-	  this.Cristal.render(0.0875F);
-	  GL11.glScalef(this.GlScaleX, this.GlScaleY, this.GlScaleZ);
-	  GL11.glPopMatrix();
+	  this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
+	  TextureManager renderEngine = Minecraft.getMinecraft().renderEngine;
+	  renderEngine.bindTexture(GimmickeryClientProps.TEX_CRISTAL);
+	  Cristal.render(par7);
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)

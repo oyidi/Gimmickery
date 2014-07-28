@@ -7,7 +7,8 @@ import net.minecraft.block.material.Material;
 /**
  * ·½¿é×¢²áÀà
  */
-public class GimmickeryBlocks {
+public class GimmickeryBlocks 
+{
 
 	public static BlockPowerSourceG PowerSourceBlock;
 

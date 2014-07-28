@@ -1,7 +1,6 @@
 package net.frostcraftsman.gimmickery.render;
 
 import org.lwjgl.opengl.GL11;
-
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import net.frostcraftsman.gimmickery.Gimmickery;
 import net.frostcraftsman.gimmickery.model.ModelCristal;
@@ -14,13 +13,11 @@ import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.entity.WatchableObject;
 import net.minecraft.world.IBlockAccess;
 
-public class MuiltyFaceBlockRender extends GimmickeryRenderLivingBase implements ISimpleBlockRenderingHandler{
-	ModelBase model;
-	public MuiltyFaceBlockRender(ModelBase par1ModelBase, float par2) {
-		super(par1ModelBase, par2);
-		this.model=par1ModelBase;
+public class MuiltyFaceBlockRender implements ISimpleBlockRenderingHandler{
+	public MuiltyFaceBlockRender() {
 	}
 
 	@Override
@@ -34,12 +31,6 @@ public class MuiltyFaceBlockRender extends GimmickeryRenderLivingBase implements
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z,
 			Block block, int modelId, RenderBlocks renderer) {
 		// TODO Auto-generated method stub
-		TextureManager renderEngine = Minecraft.getMinecraft().renderEngine;
-		GL11.glPushMatrix();
-		renderEngine.bindTexture(GimmickeryClientProps.TEX_CRISTAL);
-		((ModelCristal)this.model).render();
-        GL11.glTranslated(x, y, z);
-        GL11.glPopMatrix();
 		return true;
 	}
 
