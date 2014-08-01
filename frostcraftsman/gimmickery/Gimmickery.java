@@ -3,8 +3,7 @@ package net.frostcraftsman.gimmickery;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import net.frostcraftsman.gimmickery.entity.EntityPrinnyBlue;
-import net.frostcraftsman.gimmickery.entity.EntityWoodKarakuriNingyG;
+import net.frostcraftsman.gimmickery.entity.*;
 import net.frostcraftsman.gimmickery.proxy.GimmickeryCommonProxy;
 import net.frostcraftsman.gimmickery.registry.GimmickeryBlocks;
 import net.frostcraftsman.gimmickery.registry.GimmickeryItems;
@@ -61,6 +60,8 @@ public class Gimmickery {
 	     id++;
 	     EntityRegistry.registerModEntity(EntityPrinnyBlue.class, "PrinnyBlue", id, this, 80, 1, true);//id is an internal mob id, you can start at 0 and continue adding them up.
 		 id++;
+		 EntityRegistry.registerModEntity(EntityKarakuriNingyG.class, "KarakuriNingy", id, this, 80, 1, true);//id is an internal mob id, you can start at 0 and continue adding them up.
+	     id++;
 	     //EntityRegistry.addSpawn(EntityWoodKarakuriNingyG.class, 10, 4, 4, EnumCreatureType.monster);
 		 proxy.init();
 		 proxy.registerRenderThings();//calls the methods in our proxy, which will do things on client side

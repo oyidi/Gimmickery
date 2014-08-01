@@ -28,6 +28,7 @@ public class GimmickeryItems
 	public static ItemEmptyIntelligenceCoreG EmptyIntelligenceCore;
 	public static ItemElementaryMagicLubeOilG ElementaryMagicLubeOil;
 	public static ItemPrinnyBlue PrinnyBlue;
+	public static ItemKarakuriNingyG KarakuriNingy;
 	
 	public static void init() 
 	{
@@ -50,5 +51,6 @@ public class GimmickeryItems
 		EmptyIntelligenceCore = new ItemEmptyIntelligenceCoreG(7015);
 		ElementaryMagicLubeOil = new ItemElementaryMagicLubeOilG(7017);
 		PrinnyBlue = new ItemPrinnyBlue(7018);
+		KarakuriNingy = new ItemKarakuriNingyG(7019);
     }
 }
