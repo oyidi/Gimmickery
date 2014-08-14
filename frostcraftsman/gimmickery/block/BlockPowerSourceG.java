@@ -15,11 +15,11 @@ public class BlockPowerSourceG extends GimmickeryBlockContainerBase{
 
 	public BlockPowerSourceG(int id, Material par2Material) {
 		super(id, par2Material);
-		this.stb("PowerSourceBlock", "ÄÜÔ´·½¿é");
-		this.setHardness(1.5f); //¿ÉÊ¡ÂÔ
-		this.setResistance(10.0f); //¿ÉÊ¡ÂÔ
-		this.setStepSound(Block.soundStoneFootstep); //¿ÉÊ¡ÂÔ
-		this.setCreativeTab(Gimmickery.gct); //¿ÉÊ¡ÂÔ
+		this.stb("PowerSourceBlock", "èƒ½æºé­”æ–¹");
+		this.setHardness(1.5f); //å¯çœç•¥
+		this.setResistance(10.0f); //å¯çœç•¥
+		this.setStepSound(Block.soundStoneFootstep); //å¯çœç•¥
+		this.setCreativeTab(Gimmickery.gct); //å¯çœç•¥
 		// TODO Auto-generated constructor stub
 		this.setBlockBounds(0F, 0F, 0F, 1F, 2F, 1F);
 		this.setLightOpacity(0);
