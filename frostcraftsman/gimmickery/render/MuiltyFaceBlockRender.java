@@ -1,6 +1,7 @@
 package net.frostcraftsman.gimmickery.render;
 
 import org.lwjgl.opengl.GL11;
+
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import net.frostcraftsman.gimmickery.Gimmickery;
 import net.frostcraftsman.gimmickery.model.ModelCristal;
@@ -13,18 +14,21 @@ import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.WatchableObject;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
 
 public class MuiltyFaceBlockRender implements ISimpleBlockRenderingHandler{
+	ModelCristal model = new ModelCristal();
 	public MuiltyFaceBlockRender() {
 	}
 
 	@Override
 	public void renderInventoryBlock(Block block, int metadata, int modelID,
 			RenderBlocks renderer) {
-		// TODO Auto-generated method stub
-		
+		GL11.glTranslatef(0, 0.5F, 0);
+		model.render((Entity)null, 0F, 0F, 0F, 0F, 0F, 0.05F);
 	}
 
 	@Override

@@ -21,6 +21,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
 public class ModelCristal extends GimmickeryModelBase
 {
@@ -29,6 +30,8 @@ public class ModelCristal extends GimmickeryModelBase
     ModelRenderer Cristal;
     ModelRenderer goldchip1;
     ModelRenderer goldchip2;
+    private static final ResourceLocation CRISTAL_TEXTURE = new ResourceLocation("gimmickery:textures\\blocks\\cristal.png");
+
   
     public ModelCristal()
     {
@@ -43,14 +46,15 @@ public class ModelCristal extends GimmickeryModelBase
         Cristal.mirror = true;
         goldchip1 = new ModelRenderer(this,0,0);
         goldchip2 = new ModelRenderer(this,0,0);
-        goldchip1.addBox(16F, -16F, -2F, 1, 10, 6);
+        goldchip1.addBox(14F, -8F, -2F, 1, 10, 6);
         goldchip1.setRotationPoint(0F, -8F, 0F);
-        goldchip2.addBox(-16F, -16F, -4F, 1, 10, 6);
+        goldchip2.addBox(-14F, -8F, -4F, 1, 10, 6);
         goldchip2.setRotationPoint(0F, -8F, 0F);
     }
   @Override
   public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
   {
+	  Minecraft.getMinecraft().renderEngine.bindTexture(CRISTAL_TEXTURE);
       this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
       setRotation(Cristal, 0.7853982F, -i, 0.6154729F);
       this.Cristal.render(par7);

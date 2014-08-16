@@ -11,7 +11,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
 public class CristalTileEntityRenderer extends TileEntitySpecialRenderer {
-    private static final ResourceLocation CRISTAL_TEXTURE = new ResourceLocation("gimmickery:textures\\blocks\\cristal.png");
     public static CristalTileEntityRenderer cristalRenderer;
     private ModelCristal cristalModel = new ModelCristal();
 
@@ -28,7 +27,6 @@ public class CristalTileEntityRenderer extends TileEntitySpecialRenderer {
         this.rendering((float)par2, (float)par4, (float)par6, par1TileEntitySkull.getBlockMetadata() & 7,par1TileEntitySkull.getCristalType());
     }
     public void rendering(float par1, float par2, float par3, int par4, int par6){
-    	this.bindTexture(CRISTAL_TEXTURE);
     	GL11.glPushMatrix();
         GL11.glDisable(GL11.GL_CULL_FACE);
         GL11.glTranslatef(par1 + 0.5F, par2 + 0.5F, par3 + 0.5F);
