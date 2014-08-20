@@ -5,6 +5,7 @@ import net.frostcraftsman.gimmickery.entity.EntityWoodKarakuriNingyG;
 import net.frostcraftsman.gimmickery.event.KarakuriNingySoundEvent;
 import net.frostcraftsman.gimmickery.event.PrinnyBlueSoundEvent;
 import net.frostcraftsman.gimmickery.model.ModelCristal;
+import net.frostcraftsman.gimmickery.model.ModelKarakuriNingyG;
 import net.frostcraftsman.gimmickery.model.ModelPrinnyBlue;
 import net.frostcraftsman.gimmickery.model.ModelRailgun;
 import net.frostcraftsman.gimmickery.render.CristalTileEntityRenderer;
@@ -37,7 +38,7 @@ public class GimmickeryClientProxy extends GimmickeryCommonProxy{
     @Override
     public void registerRenderThings() 
     {
-            RenderingRegistry.registerEntityRenderingHandler(EntityWoodKarakuriNingyG.class, new RenderWoodKarakuriNingyG(new ModelPrinnyBlue(), 0.5F));//the 0.5F is the shadowsize            
+            RenderingRegistry.registerEntityRenderingHandler(EntityWoodKarakuriNingyG.class, new RenderWoodKarakuriNingyG(new ModelKarakuriNingyG(), 0.5F));//the 0.5F is the shadowsize            
     		RenderingRegistry.registerEntityRenderingHandler(EntityPrinnyBlue.class, new RenderPrinnyBlue(new ModelPrinnyBlue(), 0.5F));//the 0.5F is the shadowsize                    
     		ClientRegistry.bindTileEntitySpecialRenderer(CristalTileEntity.class, new CristalTileEntityRenderer());
     }

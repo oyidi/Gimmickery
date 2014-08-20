@@ -24,7 +24,7 @@ public class CristalTileEntityRenderer extends TileEntitySpecialRenderer {
 
     public void renderTileEntityCristalAt(CristalTileEntity par1TileEntitySkull, double par2, double par4, double par6, float par8)
     {
-        this.rendering((float)par2, (float)par4, (float)par6, par1TileEntitySkull.getBlockMetadata() & 7,par1TileEntitySkull.getCristalType());
+    	this.rendering((float)par2, (float)par4, (float)par6, par1TileEntitySkull.getBlockMetadata() & 7,par1TileEntitySkull.getCristalType());
     }
     public void rendering(float par1, float par2, float par3, int par4, int par6){
     	GL11.glPushMatrix();

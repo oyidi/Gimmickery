@@ -26,7 +26,7 @@ import net.minecraft.util.ResourceLocation;
 public class ModelCristal extends GimmickeryModelBase
 {
   //fields
-	float i = 0;
+	private float i = 0;
     ModelRenderer Cristal;
     ModelRenderer goldchip1;
     ModelRenderer goldchip2;
@@ -60,7 +60,7 @@ public class ModelCristal extends GimmickeryModelBase
       this.Cristal.render(par7);
       setRotation(goldchip1,0,i,0);
       setRotation(goldchip2,0,i,0);
-      i+=0.01;
+      i+=0.01F;
       goldchip1.render(par7);
       goldchip2.render(par7);
   }
