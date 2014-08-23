@@ -78,7 +78,7 @@ public class ModelKarakuriNingyG extends ModelBiped
     setTextureOffset("bipedLeftArm.left_hand_front_lace", 63, 59);
     setTextureOffset("bipedLeftArm.left_hand_back_lace", 63, 76);
     setTextureOffset("bipedLeftArm.left_hand_left_lace", 73, 64);
-    setTextureOffset("bipedLeftArm.lfet_hand_right_lace", 55, 64);
+    setTextureOffset("bipedLeftArm.left_hand_right_lace", 55, 64);
     setTextureOffset("bipedLeftArm.left_arm_long_sleeve_front", 63, 117);
     setTextureOffset("bipedLeftArm.upper_left_arm", 63, 109);
     setTextureOffset("bipedLeftArm.left_arm_long_sleeve_bottom", 60, 122);
@@ -137,7 +137,7 @@ public class ModelKarakuriNingyG extends ModelBiped
     setTextureOffset("bipedRightArm.right_hand_left_fronter_lace1", 93, 91);
     setTextureOffset("bipedRightArm.right_hand_left_fronter_lace2", 93, 91);
     setTextureOffset("bipedRightArm.right_hand_left_fronter_lace3", 93, 91);
-    setTextureOffset("bipedRightArm.upper_right_arm_", 63, 109);
+    setTextureOffset("bipedRightArm.upper_right_arm", 63, 109);
     setTextureOffset("bipedRightArm.right_arm_long_sleeve_back", 63, 117);
     setTextureOffset("bipedRightArm.right_arm_long_sleeve_front", 63, 117);
     setTextureOffset("bipedRightArm.right_arm_long_sleeve_bottom", 60, 122);
@@ -148,11 +148,12 @@ public class ModelKarakuriNingyG extends ModelBiped
     setTextureOffset("bipedLeftLeg.left_Leg_sock_Front", 0, 42);
     setTextureOffset("bipedLeftLeg.left_Leg_sock_back", 0, 42);
     setTextureOffset("bipedLeftLeg.left_sock_button", 0, 86);
-    setTextureOffset("bipedRightLeg.Right_Leg_sock_back", 0, 42);
-    setTextureOffset("bipedRightLeg.Right_Leg", 0, 2);
-    setTextureOffset("bipedRightLeg.Right_Leg_sock_left", 0, 56);
-    setTextureOffset("bipedRightLeg.Right_Leg_sock_right", 0, 70);
-    setTextureOffset("bipedRightLeg.Right_Leg_sock_front", 0, 42);
+    setTextureOffset("bipedRightLeg.right_Leg_sock_back", 0, 42);
+    setTextureOffset("bipedRightLeg.right_Leg", 0, 2);
+    setTextureOffset("bipedRightLeg.right_Leg_sock_left", 0, 56);
+    setTextureOffset("bipedRightLeg.right_Leg_sock_right", 0, 70);
+    setTextureOffset("bipedRightLeg.right_Leg_sock_front", 0, 42);
+    setTextureOffset("bipedRightLeg.right_Leg_sock_back", 0, 42);
     setTextureOffset("bipedRightLeg.right_sock_button", 0, 86);
     setTextureOffset("tie.tie1", 29, 100);
     
@@ -362,11 +363,11 @@ public class ModelKarakuriNingyG extends ModelBiped
         bipedHead.addBox("outer_right_hair2", 5F, -8F, -2F, 1, 7, 1);
 
 
-      bipedLeftArm= new ModelRenderer(this, "bipedLeftArm");
-      bipedLeftArm.setRotationPoint(-5F, -6F, 1F);
-      setRotation(bipedLeftArm, 0F, 0F, 0F);
-      bipedLeftArm.mirror = true;
-   bipedLeftArm.addBox("left_arm", -1F, -2F, -2F, 1, 7, 4);
+        bipedLeftArm= new ModelRenderer(this, "bipedLeftArm");
+        bipedLeftArm.setRotationPoint(-5F, -6F, 1F);
+        setRotation(bipedLeftArm, 0F, 0F, 0F);
+        bipedLeftArm.mirror = true;
+        bipedLeftArm.addBox("left_arm", -1F, -2F, -2F, 1, 7, 4);
         bipedLeftArm.addBox("outter_left_sleeve", -5F, 8F, 3F, 6, 8, 2);
         bipedLeftArm.addBox("outtest_left_sleeve", -5F, 11F, 5F, 6, 5, 1);
         bipedLeftArm.addBox("left_sleeve", -5F, 5F, -3F, 6, 11, 6);
@@ -394,10 +395,10 @@ public class ModelKarakuriNingyG extends ModelBiped
         bipedLeftArm.addBox("left_arm_long_sleeve_back", -4F, 2F, 1F, 3, 2, 1);
         bipedLeftArm.addBox("left_arm_long_sleeve_left", -4F, 2F, -1F, 1, 2, 2);
 
-      bipedRightArm= new ModelRenderer(this, "bipedRightArm");
-      bipedRightArm.setRotationPoint(5F, -6F, 1F);
-      setRotation(bipedRightArm, 0F, 0F, 0F);
-      bipedRightArm.mirror = true;
+        bipedRightArm= new ModelRenderer(this, "bipedRightArm");
+        bipedRightArm.setRotationPoint(5F, -6F, 1F);
+        setRotation(bipedRightArm, 0F, 0F, 0F);
+        bipedRightArm.mirror = true;
         bipedRightArm.addBox("outtest_right_sleeve", -1F, 11F, 5F, 6, 5, 1);
         bipedRightArm.addBox("outter_right_sleeve", -1F, 8F, 3F, 6, 8, 2);
         bipedRightArm.addBox("right_sleeve", -1F, 5F, -3F, 6, 11, 6);
@@ -425,20 +426,20 @@ public class ModelKarakuriNingyG extends ModelBiped
         bipedRightArm.addBox("right_arm_long_sleeve_front", 1F, 2F, -2F, 3, 2, 1);
         bipedRightArm.addBox("right_arm_long_sleeve_bottom", 1F, 4F, -2F, 3, 1, 4);
         bipedRightArm.addBox("right_arm_long_sleeve_left", 3F, 2F, -1F, 1, 2, 2);
-      bipedLeftLeg = new ModelRenderer(this, "bipedLeftLeg");
-      bipedLeftLeg.setRotationPoint(-1F, 9F, 1F);
-      setRotation(bipedLeftLeg, 0F, 0F, 0F);
-      bipedLeftLeg.mirror = true;
+        bipedLeftLeg = new ModelRenderer(this, "bipedLeftLeg");
+        bipedLeftLeg.setRotationPoint(-1F, 9F, 1F);
+        setRotation(bipedLeftLeg, 0F, 0F, 0F);
+        bipedLeftLeg.mirror = true;
         bipedLeftLeg.addBox("left_Leg", -3F, -1F, -1F, 2, 16, 2);
         bipedLeftLeg.addBox("left_Leg_sock_left", -4F, 4F, -1F, 1, 11, 2);
         bipedLeftLeg.addBox("left_Leg_sock_right", -1F, 4F, -1F, 1, 11, 2);
         bipedLeftLeg.addBox("left_Leg_sock_Front", -4F, 4F, -2F, 4, 11, 1);
         bipedLeftLeg.addBox("left_Leg_sock_back", -4F, 4F, 1F, 4, 11, 1);
         bipedLeftLeg.addBox("left_sock_button", -4.5F, 5F, -1F, 1, 1, 1);
-      bipedRightLeg = new ModelRenderer(this, "bipedRightLeg");
-      bipedRightLeg.setRotationPoint(1F, 9F, 1F);
-      setRotation(bipedRightLeg, 0F, 0F, 0F);
-      bipedRightLeg.mirror = true;
+        bipedRightLeg = new ModelRenderer(this, "bipedRightLeg");
+        bipedRightLeg.setRotationPoint(1F, 9F, 1F);
+        setRotation(bipedRightLeg, 0F, 0F, 0F);
+        bipedRightLeg.mirror = true;
         bipedRightLeg.addBox("right_Leg_sock_back", 0F, 4F, 1F, 4, 11, 1);
         bipedRightLeg.addBox("right_Leg", 1F, -1F, -1F, 2, 16, 2);
         bipedRightLeg.addBox("right_Leg_sock_left", 0F, 4F, -1F, 1, 11, 2);
@@ -447,10 +448,10 @@ public class ModelKarakuriNingyG extends ModelBiped
         bipedRightLeg.addBox("right_sock_button", 3.5F, 5F, -1F, 1, 1, 1);
      
       
-      tie = new ModelRenderer(this, "tie");
-      tie.setRotationPoint(0F, -9F, -1F);
-      setRotation(tie, 0F, 0F, 0F);
-      tie.mirror = true;
+        tie = new ModelRenderer(this, "tie");
+        tie.setRotationPoint(0F, -9F, -1F);
+        setRotation(tie, 0F, 0F, 0F);
+        tie.mirror = true;
         tie.addBox("tie1", -1F, 0F, -2F, 2, 3, 1);
         tie.addBox("tie3", -1.5F, 3F, -2.5F, 3, 3, 1);
         tie.addBox("tie4", -2F, 6F, -3F, 4, 2, 1);

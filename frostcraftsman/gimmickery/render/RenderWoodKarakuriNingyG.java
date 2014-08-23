@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 @SideOnly(Side.CLIENT)
 public class RenderWoodKarakuriNingyG extends GimmickeryRenderLivingBase{
 
-	private static final ResourceLocation WoodKarakuriNingy_Texture = new ResourceLocation("gimmickery:textures/entity/PrinnyBlue.png");
+	private static final ResourceLocation WoodKarakuriNingy_Texture = new ResourceLocation("gimmickery:textures/entity/KarakuriNingy.png");
 	
 	public RenderWoodKarakuriNingyG(ModelBase par1ModelBase, float par2) {
 		super(par1ModelBase, par2);
