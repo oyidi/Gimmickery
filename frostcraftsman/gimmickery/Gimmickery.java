@@ -71,6 +71,8 @@ public class Gimmickery {
 		 proxy.registerRenderThings();//calls the methods in our proxy, which will do things on client side
 	     proxy.registerSound();
 	     GameRegistry.addRecipe(new ItemStack(GimmickeryBlocks.PowerSourceBlock, 1), new Object[]{"XYX",'X',Item.goldNugget,'Y',Block.blockDiamond});
+	     GameRegistry.addRecipe(new ItemStack(GimmickeryItems.WoodKarakuriNingy, 1), new Object[]{"ABA", "CDC","CCC",'A',Item.redstone,'B',GimmickeryItems.ElementaryMagicLubeOil, 'C',GimmickeryItems.WoodMagicSkin, 'D',GimmickeryItems.WoodSkeletonFrame });
+	     GameRegistry.addRecipe(new ItemStack(GimmickeryItems.WoodSkeletonFrame, 1), new Object[]{"ABA", "BCB","ABA",'A',GimmickeryItems.ElementaryMagicLubeOil ,'B',GimmickeryItems.WoodWheelGear ,'C', Item.redstone});
 	}
 	 
 	@EventHandler

@@ -518,6 +518,7 @@ public class ModelKarakuriNingyG extends ModelBiped
       this.bipedLeftLeg.rotateAngleY = 0.0F;
 
 
+
       if (this.isRiding)
       {
           this.bipedRightArm.rotateAngleX += -((float)Math.PI / 5F);
