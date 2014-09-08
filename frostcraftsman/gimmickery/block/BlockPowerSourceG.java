@@ -12,24 +12,41 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
 public class BlockPowerSourceG extends GimmickeryBlockContainerBase{
+	private int Num=0;
 
 	public BlockPowerSourceG(int id, Material par2Material) {
 		super(id, par2Material);
 		this.stb("PowerSourceBlock", "能源方块");
-		this.setHardness(1.5f); //可省略
-		this.setResistance(10.0f); //可省略
-		this.setStepSound(Block.soundStoneFootstep); //可省略
-		this.setCreativeTab(Gimmickery.gct); //可省略
+		this.setCreativeTab(Gimmickery.gct);
+		this.setTextureName("gimmickery:cristal");
 		// TODO Auto-generated constructor stub
 		this.setBlockBounds(0F, 0F, 0F, 1F, 2F, 1F);
 		this.setLightOpacity(0);
 		this.setLightValue(1.0F);
 	}
+	
+	public void onBlockAdded(World par1World, int par2, int par3, int par4)
+    {
+        super.onBlockAdded(par1World, par2, par3, par4);
+        CristalTileEntity.cristalNum+=1;
+        System.out.println(CristalTileEntity.cristalNum);
+    }
+
+	public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6)
+    {
+        super.breakBlock(par1World, par2, par3, par4, par5, par6);
+        if(CristalTileEntity.cristalNum>=0){
+        	CristalTileEntity.cristalNum-=1;
+        }else{
+        	CristalTileEntity.cristalNum=0;
+        }
+    }
+
 	@Override
 	public TileEntity createNewTileEntity(World world){
 		return new CristalTileEntity();
 	}
-	
+
 	public boolean isOpaqueCube()
     {
         return false;

@@ -2,6 +2,7 @@ package net.frostcraftsman.gimmickery.render;
 
 import net.frostcraftsman.gimmickery.proxy.GimmickeryClientProps;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
@@ -34,6 +35,26 @@ public class BeamRenderer {
 	public void renderModelBeam(float distance){
 		//unfinished
 		Minecraft.getMinecraft().renderEngine.bindTexture(texture);
+		Tessellator t = Tessellator.instance; //获取着色器
+		t.startDrawingQuads();
+		t.setBrightness(15728880);
+		//top
+		t.addVertexWithUV(0,0.5,0.5,0,0);
+		t.addVertexWithUV(0,0.5,-0.5,0,1);
+		t.addVertexWithUV(distance,0.5,-0.5,1,1);
+		t.addVertexWithUV(distance,0.5,0.5,1,0);
+		//right
+		t.addVertexWithUV(0, -0.5, 0.5, 0, 0);
+		t.addVertexWithUV(0, 0.5, 0.5, 0, 1);
+		t.addVertexWithUV(distance, 0.5, 0.5, 1, 1);
+		t.addVertexWithUV(distance, -0.5, 0.5, 1, 0);
+		//bottom
+		t.addVertexWithUV(0, -0.5, -0.5, 0, 0);
+		t.addVertexWithUV(0, -0.5, 0.5, 0, 1);
+		t.addVertexWithUV(distance, -0.5, 0.5, 1, 1);
+		t.addVertexWithUV(distance, -0.5, -0.5, 1, 0);
+		//left
+		t.draw();
 	}
 	public void setTexture(ResourceLocation texture){
 		this.texture=texture;

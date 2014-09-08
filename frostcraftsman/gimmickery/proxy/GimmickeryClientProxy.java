@@ -9,7 +9,7 @@ import net.frostcraftsman.gimmickery.model.ModelKarakuriNingyG;
 import net.frostcraftsman.gimmickery.model.ModelPrinnyBlue;
 import net.frostcraftsman.gimmickery.model.ModelRailgun;
 import net.frostcraftsman.gimmickery.render.CristalTileEntityRenderer;
-import net.frostcraftsman.gimmickery.render.MuiltyFaceBlockRender;
+import net.frostcraftsman.gimmickery.render.CristalInHandRenderer;
 import net.frostcraftsman.gimmickery.render.RenderPrinnyBlue;
 import net.frostcraftsman.gimmickery.render.RenderWoodKarakuriNingyG;
 import net.frostcraftsman.gimmickery.tileentity.CristalTileEntity;
@@ -27,7 +27,7 @@ public class GimmickeryClientProxy extends GimmickeryCommonProxy{
 	public void init() 
 	{
         super.init();
-        RenderingRegistry.registerBlockHandler(new MuiltyFaceBlockRender());
+        RenderingRegistry.registerBlockHandler(new CristalInHandRenderer());
         GameRegistry.registerTileEntity(CristalTileEntity.class, "TileEntityCristal");
     }
     

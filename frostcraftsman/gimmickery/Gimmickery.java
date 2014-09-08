@@ -70,7 +70,7 @@ public class Gimmickery {
 		 proxy.init();
 		 proxy.registerRenderThings();//calls the methods in our proxy, which will do things on client side
 	     proxy.registerSound();
-	     GameRegistry.addRecipe(new ItemStack(GimmickeryBlocks.PowerSourceBlock, 1), new Object[]{"XYX",'X',Item.goldNugget,'Y',Block.blockDiamond});
+	     GameRegistry.addRecipe(new ItemStack(GimmickeryBlocks.PowerSourceBlock, 1), new Object[]{"XYX",Character.valueOf('X'),Item.goldNugget,Character.valueOf('Y'),Block.blockDiamond});
 	}
 	 
 	@EventHandler

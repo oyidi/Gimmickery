@@ -6,6 +6,7 @@ import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import net.frostcraftsman.gimmickery.Gimmickery;
 import net.frostcraftsman.gimmickery.model.ModelCristal;
 import net.frostcraftsman.gimmickery.proxy.GimmickeryClientProps;
+import net.frostcraftsman.gimmickery.tileentity.CristalTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
@@ -19,15 +20,16 @@ import net.minecraft.entity.WatchableObject;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
 
-public class MuiltyFaceBlockRender implements ISimpleBlockRenderingHandler{
+public class CristalInHandRenderer implements ISimpleBlockRenderingHandler{
 	ModelCristal model = new ModelCristal();
-	public MuiltyFaceBlockRender() {
+	public CristalInHandRenderer() {
 	}
 
 	@Override
 	public void renderInventoryBlock(Block block, int metadata, int modelID,
 			RenderBlocks renderer) {
 		GL11.glTranslatef(0, 0.5F, 0);
+		model.ticker=CristalTileEntity.ticker;
 		model.render((Entity)null, 0F, 0F, 0F, 0F, 0F, 0.05F);
 	}
 

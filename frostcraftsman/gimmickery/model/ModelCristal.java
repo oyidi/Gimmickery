@@ -26,10 +26,10 @@ import net.minecraft.util.ResourceLocation;
 public class ModelCristal extends GimmickeryModelBase
 {
   //fields
-	private float i = 0;
     ModelRenderer Cristal;
     ModelRenderer goldchip1;
     ModelRenderer goldchip2;
+    public int ticker=0;
     private static final ResourceLocation CRISTAL_TEXTURE = new ResourceLocation("gimmickery:textures\\blocks\\cristal.png");
 
   
@@ -55,14 +55,16 @@ public class ModelCristal extends GimmickeryModelBase
   public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
   {
 	  Minecraft.getMinecraft().renderEngine.bindTexture(CRISTAL_TEXTURE);
+	  GL11.glPushMatrix();
+	  GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
       this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
-      setRotation(Cristal, 0.7853982F, -i, 0.6154729F);
+      setRotation(Cristal, 0.7853982F, -0.01F*ticker, 0.6154729F);
       this.Cristal.render(par7);
-      setRotation(goldchip1,0,i,0);
-      setRotation(goldchip2,0,i,0);
-      i+=0.01F;
+      setRotation(goldchip1,0,0.01F*ticker,0);
+      setRotation(goldchip2,0,0.01F*ticker,0);
       goldchip1.render(par7);
       goldchip2.render(par7);
+      GL11.glPopMatrix();
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)
