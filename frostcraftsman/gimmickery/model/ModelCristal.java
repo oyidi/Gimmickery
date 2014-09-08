@@ -14,6 +14,7 @@ package net.frostcraftsman.gimmickery.model;
 import org.lwjgl.opengl.GL11;
 
 import net.frostcraftsman.gimmickery.proxy.GimmickeryClientProps;
+import net.frostcraftsman.gimmickery.tileentity.CristalTileEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
@@ -54,14 +55,15 @@ public class ModelCristal extends GimmickeryModelBase
   @Override
   public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
   {
+	  this.ticker=CristalTileEntity.ticker;
 	  Minecraft.getMinecraft().renderEngine.bindTexture(CRISTAL_TEXTURE);
 	  GL11.glPushMatrix();
 	  GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
       this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
-      setRotation(Cristal, 0.7853982F, -0.01F*ticker, 0.6154729F);
+      setRotation(Cristal, 0.7853982F, -0.01F*this.ticker, 0.6154729F);
       this.Cristal.render(par7);
-      setRotation(goldchip1,0,0.01F*ticker,0);
-      setRotation(goldchip2,0,0.01F*ticker,0);
+      setRotation(goldchip1,0,0.01F*this.ticker,0);
+      setRotation(goldchip2,0,0.01F*this.ticker,0);
       goldchip1.render(par7);
       goldchip2.render(par7);
       GL11.glPopMatrix();

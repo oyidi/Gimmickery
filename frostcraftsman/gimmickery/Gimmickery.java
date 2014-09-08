@@ -70,7 +70,11 @@ public class Gimmickery {
 		 proxy.init();
 		 proxy.registerRenderThings();//calls the methods in our proxy, which will do things on client side
 	     proxy.registerSound();
-	     GameRegistry.addRecipe(new ItemStack(GimmickeryBlocks.PowerSourceBlock, 1), new Object[]{"XYX",Character.valueOf('X'),Item.goldNugget,Character.valueOf('Y'),Block.blockDiamond});
+	     GameRegistry.addRecipe(new ItemStack(GimmickeryBlocks.PowerSourceBlock, 1), new Object[]{"XYX",Character.valueOf('X'),Item.ingotGold,Character.valueOf('Y'),Block.blockDiamond});
+	     GameRegistry.addRecipe(new ItemStack(GimmickeryItems.WoodKarakuriNingy, 1), new Object[]{"ABA", "CDC","CCC",'A',Item.redstone,'B',GimmickeryItems.ElementaryMagicLubeOil, 'C',GimmickeryItems.WoodMagicSkin, 'D',GimmickeryItems.WoodSkeletonFrame });
+	     GameRegistry.addRecipe(new ItemStack(GimmickeryItems.WoodSkeletonFrame, 1), new Object[]{"ABA", "BCB","ABA",'A',GimmickeryItems.ElementaryMagicLubeOil ,'B',GimmickeryItems.WoodWheelGear ,'C', Item.redstone});
+	     GameRegistry.addRecipe(new ItemStack(GimmickeryItems.EmptyIntelligenceCore,1), new Object[]{" A ", "A A", " A ",'A',Block.glass});
+	     GameRegistry.addRecipe(new ItemStack(GimmickeryItems.IntelligenceCoreAttack,1), new Object[]{" A ", "ABA", " A ",'A',Block.glass,'B',GimmickeryItems.SoulAttack}); 
 	}
 	 
 	@EventHandler

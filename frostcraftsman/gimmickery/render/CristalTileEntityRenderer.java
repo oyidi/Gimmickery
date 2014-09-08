@@ -5,7 +5,10 @@ import org.lwjgl.opengl.GL12;
 
 import net.frostcraftsman.gimmickery.model.ModelCristal;
 import net.frostcraftsman.gimmickery.tileentity.CristalTileEntity;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
@@ -25,7 +28,7 @@ public class CristalTileEntityRenderer extends TileEntitySpecialRenderer {
 
     public void renderTileEntityCristalAt(CristalTileEntity par1TileEntityCristal, double par2, double par4, double par6, float par8)
     {
-    	this.rendering((float)par2, (float)par4, (float)par6, par1TileEntityCristal.ticker,par1TileEntityCristal.getCristalType());
+    	this.rendering((float)par2, (float)par4, (float)par6, 0,par1TileEntityCristal.getCristalType());
     }
 
     
@@ -37,12 +40,39 @@ public class CristalTileEntityRenderer extends TileEntitySpecialRenderer {
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(1.0F, -1.0F, 1.0F);
         GL11.glEnable(GL11.GL_ALPHA_TEST);
-        cristalModel.ticker=par4;
         cristalModel.render((Entity)null, 0.0F, 0.0F, 0.0F, 0F, 0.0F, 0.0625F);
         FontRenderer fontrenderer = this.getFontRenderer();
         String s=String.valueOf(CristalTileEntity.cristalNum);
-        GL11.glTranslatef(0, 1.5F, 0);
-        fontrenderer.drawString(s, -fontrenderer.getStringWidth(s) / 2, 10, 0);
+        GL11.glTranslatef(0F, -1.5F, 0F);
+        GL11.glRotatef(-RenderManager.instance.playerViewY, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(-RenderManager.instance.playerViewX, 1.0F, 0.0F, 0.0F);
+        GL11.glScalef(-0.03F, 0.03F, 0.03F);
+        GL11.glDisable(GL11.GL_LIGHTING);
+        GL11.glDepthMask(false);
+        GL11.glEnable(GL11.GL_BLEND);
+        GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        int j = fontrenderer.getStringWidth(s) / 2;
+        int color=0xFF000000;
+        if(CristalTileEntity.cristalNum<=10){
+            color = 0xFF0099FF;
+        }else if(CristalTileEntity.cristalNum<25){
+        	color = 0xFF00FF77;
+        }else if(CristalTileEntity.cristalNum<50){
+        	color = 0xFFFFFF00;
+        }else{
+        	color = 0xFFFF0000;
+        }
+        Tessellator tessellator = Tessellator.instance;
+        GL11.glDisable(GL11.GL_TEXTURE_2D);
+        tessellator.startDrawingQuads();
+        tessellator.setColorRGBA_F(0.0F, 0.0F, 0.0F, 0.2F);
+        tessellator.addVertex((double)(-j -1), (double)(-3), 0.0D);
+        tessellator.addVertex((double)(-j -1), (double)(6), 0.0D);
+        tessellator.addVertex((double)(j), (double)(6), 0.0D);
+        tessellator.addVertex((double)(j), (double)(-3), 0.0D);
+        tessellator.draw();
+        GL11.glEnable(GL11.GL_TEXTURE_2D);
+        fontrenderer.drawString(s, -j, -2, color);
         GL11.glPopMatrix();
     }
 

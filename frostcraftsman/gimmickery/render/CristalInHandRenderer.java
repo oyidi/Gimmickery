@@ -29,7 +29,6 @@ public class CristalInHandRenderer implements ISimpleBlockRenderingHandler{
 	public void renderInventoryBlock(Block block, int metadata, int modelID,
 			RenderBlocks renderer) {
 		GL11.glTranslatef(0, 0.5F, 0);
-		model.ticker=CristalTileEntity.ticker;
 		model.render((Entity)null, 0F, 0F, 0F, 0F, 0F, 0.05F);
 	}
 

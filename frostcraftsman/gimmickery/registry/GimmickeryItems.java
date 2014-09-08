@@ -3,6 +3,8 @@ package net.frostcraftsman.gimmickery.registry;
 import net.frostcraftsman.gimmickery.GimmickerysPartsCatalog.*;
 import net.frostcraftsman.gimmickery.GimmickerysPartsCatalog.ItemWoodWheelGearG;
 import net.frostcraftsman.gimmickery.item.*;
+import net.frostcraftsman.gimmickery.itemintelligencecores.*;
+import net.frostcraftsman.gimmickery.souls.*;
 
 /**
  * ÎïÆ·×¢²á
@@ -26,7 +28,9 @@ public class GimmickeryItems
 	public static ItemDiamondSkeletonFrameG DiamondSkeletonFrame;
 	public static ItemDiamondMagicSkinG DiamondMagicSkin;
 	public static ItemEmptyIntelligenceCoreG EmptyIntelligenceCore;
+	public static ItemIntelligenceCoreAttackG IntelligenceCoreAttack;
 	public static ItemElementaryMagicLubeOilG ElementaryMagicLubeOil;
+	public static SoulAttackG SoulAttack;
 	public static ItemPrinnyBlue PrinnyBlue;
 	
 	public static void init() 
@@ -34,7 +38,6 @@ public class GimmickeryItems
 		WoodWheelGear = new ItemWoodWheelGearG(7000);
 		WoodSkeletonFrame = new ItemWoodSkeletonFrameG(7001);
 		WoodMagicSkin = new ItemWoodMagicSkinG(7002);
-		WoodKarakuriNingy = new ItemWoodKarakuriNingyG(7016);
 		StoneWheelGear = new ItemStoneWheelGearG(7003);
 		StoneSkeletonFrame = new ItemStoneSkeletonFrameG(7004);
 		StoneMagicSkin = new ItemStoneMagicSkinG(7005);
@@ -48,7 +51,10 @@ public class GimmickeryItems
 		DiamondSkeletonFrame = new ItemDiamondSkeletonFrameG(7013);
 		DiamondMagicSkin = new ItemDiamondMagicSkinG(7014);
 		EmptyIntelligenceCore = new ItemEmptyIntelligenceCoreG(7015);
-		ElementaryMagicLubeOil = new ItemElementaryMagicLubeOilG(7017);
-		PrinnyBlue = new ItemPrinnyBlue(7018);
+		IntelligenceCoreAttack = new ItemIntelligenceCoreAttackG(7016);
+		SoulAttack = new SoulAttackG(7017);
+		ElementaryMagicLubeOil = new ItemElementaryMagicLubeOilG(7018);
+		WoodKarakuriNingy = new ItemWoodKarakuriNingyG(7019);
+		PrinnyBlue = new ItemPrinnyBlue(7020);
     }
 }

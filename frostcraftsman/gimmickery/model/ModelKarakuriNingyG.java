@@ -168,20 +168,20 @@ public class ModelKarakuriNingyG extends ModelBiped
       bipedBody.mirror = true;
       setRotation(bipedBody, 0F, 0F, 0F);
       collar_left= new ModelRenderer(this, 170, 74);
-      collar_left.addBox(0F, 0F, 0F, 3, 1, 5);
-      collar_left.setRotationPoint(-4.5F, -9F, -3F);
+      collar_left.addBox(0F, 0F, 0F, 2, 1, 5);
+      collar_left.setRotationPoint(-3.5F, -9F, -3F);
       collar_left.setTextureSize(256, 128);
       collar_left.mirror = true;
       setRotation(collar_left, 0F, 0F, 0F);
       collar_right= new ModelRenderer(this, 190, 74);
-      collar_right.addBox(0F, 0F, 0F, 3, 1, 5);
+      collar_right.addBox(0F, 0F, 0F, 2, 1, 5);
       collar_right.setRotationPoint(1.5F, -9F, -3F);
       collar_right.setTextureSize(256, 128);
       collar_right.mirror = true;
       setRotation(collar_right, 0F, 0F, 0F);
       collar_back= new ModelRenderer(this, 177, 83);
-      collar_back.addBox(0F, 0F, 0F, 9, 1, 2);
-      collar_back.setRotationPoint(-4.5F, -9F, 2F);
+      collar_back.addBox(0F, 0F, 0F, 7, 1, 1);
+      collar_back.setRotationPoint(-3.5F, -9F, 2F);
       collar_back.setTextureSize(256, 128);
       collar_back.mirror = true;
       setRotation(collar_back, 0F, 0F, 0F);
@@ -516,6 +516,7 @@ public class ModelKarakuriNingyG extends ModelBiped
       this.bipedLeftLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
       this.bipedRightLeg.rotateAngleY = 0.0F;
       this.bipedLeftLeg.rotateAngleY = 0.0F;
+
 
 
       if (this.isRiding)
