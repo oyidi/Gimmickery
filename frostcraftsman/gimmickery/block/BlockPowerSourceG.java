@@ -2,6 +2,7 @@ package net.frostcraftsman.gimmickery.block;
 
 import net.frostcraftsman.gimmickery.Gimmickery;
 import net.frostcraftsman.gimmickery.proxy.GimmickeryClientProps;
+import net.frostcraftsman.gimmickery.registry.GimmickeryBlocks;
 import net.frostcraftsman.gimmickery.tileentity.CristalTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -13,6 +14,9 @@ import net.minecraftforge.common.ForgeDirection;
 
 public class BlockPowerSourceG extends GimmickeryBlockContainerBase{
 	private int Num=0;
+	public int blockposX;
+	public int blockposY;
+	public int blockposZ;
 
 	public BlockPowerSourceG(int id, Material par2Material) {
 		super(id, par2Material);
@@ -30,6 +34,10 @@ public class BlockPowerSourceG extends GimmickeryBlockContainerBase{
         super.onBlockAdded(par1World, par2, par3, par4);
         CristalTileEntity.cristalNum+=1;
         System.out.println(CristalTileEntity.cristalNum);
+        blockposX=par2;
+        blockposY=par3;
+        blockposZ=par4;
+        System.out.println("x×ø±ê"+blockposX+",y×ø±ê"+blockposY+",z×ø±ê"+blockposZ+",blockidºÅ"+GimmickeryBlocks.PowerSourceBlock.blockID);
     }
 
 	public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6)

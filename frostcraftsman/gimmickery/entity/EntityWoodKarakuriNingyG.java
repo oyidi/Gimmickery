@@ -1,8 +1,13 @@
 package net.frostcraftsman.gimmickery.entity;
 
+import java.util.List;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.frostcraftsman.gimmickery.registry.GimmickeryBlocks;
+import net.frostcraftsman.gimmikery.world.WorldG;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockColored;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
@@ -11,6 +16,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAIDefendVillage;
+import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookAtVillager;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -21,31 +27,48 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.pathfinding.PathEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.village.Village;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDummyContainer;
+import net.frostcraftsman.gimmickery.block.*;
 
 
-public class EntityWoodKarakuriNingyG extends EntityAnimal{
+public class EntityWoodKarakuriNingyG extends EntityMob{
 
-    /** deincrements, and a distance-to-home check is done at 0 */
-    private int homeCheckTimer;
-    Village villageObj;
-    private int attackTimer;
-    private int holdRoseTick;
+    public EntityWoodKarakuriNingyG(World par1World) {
+		super(par1World);
+        this.setSize(1.4F, 2.9F);      
+        experienceValue = 5;     
 
+	}
+
+	/** deincrements, and a distance-to-home check is done at 0 */
+    int distance=10;
+    int id;
+    int kposX;
+    int jposY;
+    int iposZ;
 
 	public EntityWoodKarakuriNingyG(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)
     {
-		super(par1World);
+        this(par1World);
         this.setPosition(par2, par4, par6);
+        if(this.findPowerSource() == true)
+        {
         float f = (float)(Math.random() * Math.PI * 2.0D);
         this.motionX = (double)(-((float)Math.sin((double)f)) * 0.02F);
         this.motionY = 0.20000000298023224D;
@@ -53,38 +76,121 @@ public class EntityWoodKarakuriNingyG extends EntityAnimal{
         this.prevPosX = par2;
         this.prevPosY = par4;
         this.prevPosZ = par6;
-        this.setSize(1.4F, 2.9F);
         this.getNavigator().setAvoidsWater(true);
-        this.tasks.addTask(1, new EntityAIBreakDoor(this));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, 1.0D, true));
-        this.tasks.addTask(2, new EntityAIMoveTowardsTarget(this, 0.9D, 32.0F));
-        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, 1.0D));
-        this.tasks.addTask(6, new EntityAIWander(this, 0.6D));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.tasks.addTask(8, new EntityAILookIdle(this));
-        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityLiving.class, 0, false, true, IMob.mobSelector));
+        this.tasks.addTask(1, new EntityAIWander(this, 0.6D));
+        this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityLiving.class, 0, false, true, IMob.mobSelector));
+        System.out.println("成功获得能量。");
+        }
+        else
+        {
+            System.out.println("能量·零·运动·不能。。。");
+        }
     }
-	
-	@Override
-	public EntityAgeable createChild(EntityAgeable entityageable) {
-		// TODO Auto-generated method stub
-		return entityageable = this.createChild(this);
 
+	@Override
+	protected Entity findPlayerToAttack() {
+		// TODO 自动生成的方法存根
+		return super.findPlayerToAttack();
 	}
+	
+	
+	public boolean findPowerSource()
+	{
+		for(int i=1; i<distance; i++)
+		{        
+		    for(int j=1; j<distance; j++)
+		    {
+		        for(int k=1; k<distance; k++)
+		    	{
+		        	 kposX=(int)(this.posX+k);
+		        	 jposY=(int)(this.posY+j);
+		        	 iposZ=(int)(this.posZ+i);
+		        	 
+		    			 id = this.worldObj.getBlockId(kposX, jposY, iposZ);
+		    				 
+		 				 System.out.println("现在是x轴方向,第"+k+"次探索，现x坐标"+kposX+",现y坐标"+jposY+",现z坐标"+iposZ+",现id号"+id);
+		 					
+		 				 if (id == GimmickeryBlocks.PowerSourceBlock.blockID)
+		    				{
+		    				     System.out.println("已定位到魔方X轴坐标:"+kposX);
+		    				     return true;
+		    				}
+		 			     else
+		 					{
+		 						
+		 						 System.out.println("x轴方向未发现。");
+		 						      
+		 					}			
+		    	}
+		        
+		     System.out.println("现在是y轴方向,第"+j+"次探索，现x坐标"+kposX+",现y坐标"+jposY+",现z坐标"+iposZ+",现id号"+id);
+					
+		     if (id == GimmickeryBlocks.PowerSourceBlock.blockID)
+			    {
+		    	
+				     System.out.println("已定位到魔方Y轴坐标:"+jposY);
+				     return true;
+				    
+			    }
+		     else
+			    {
+				
+				     System.out.println("Y轴方向未发现。");
+					
+			    }
+		    
+	        }
+           System.out.println("现在是z轴方向,第"+i+"次探索，现x坐标"+kposX+",现y坐标"+jposY+",现z坐标"+iposZ+",现id号"+id);
+			
+           if (id == GimmickeryBlocks.PowerSourceBlock.blockID)
+			  {
+				
+		           System.out.println("已定位到魔方Z轴坐标:"+iposZ);
+		           return true;
+		        
+			  }
+		   else
+			  {
+				
+				   System.out.println("Z轴方向未发现。");
+				
+			  }
+	   }
+		
+		return false;
+		
+	}
+
+	
+	/**
+     * Called to update the entity's position/logic.
+     */
+    public void onUpdate()
+    {
+        super.onUpdate();
+
+        if (!this.worldObj.isRemote && this.worldObj.difficultySetting == 0)
+        {
+            this.setDead();
+        }
+    }
 
     @Override
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(10.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.20000000298023224D);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(40.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.23000000417232513D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(3.0D);
     }
     
     protected void entityInit()
     {
         super.entityInit();
-        this.dataWatcher.addObject(16, Byte.valueOf((byte)0));
+
     }
 
     /**
@@ -100,76 +206,8 @@ public class EntityWoodKarakuriNingyG extends EntityAnimal{
      */
     protected void updateAITick()
     {
-        if (--this.homeCheckTimer <= 0)
-        {
-            this.homeCheckTimer = 70 + this.rand.nextInt(50);
-            this.villageObj = this.worldObj.villageCollectionObj.findNearestVillage(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ), 32);
-
-            if (this.villageObj == null)
-            {
-                this.detachHome();
-            }
-            else
-            {
-                ChunkCoordinates chunkcoordinates = this.villageObj.getCenter();
-                this.setHomeArea(chunkcoordinates.posX, chunkcoordinates.posY, chunkcoordinates.posZ, (int)((float)this.villageObj.getVillageRadius() * 0.6F));
-            }
-        }
-
         super.updateAITick();
     }
-
-
-    /**
-     * Decrements the entity's air supply when underwater
-     */
-    protected int decreaseAirSupply(int par1)
-    {
-        return par1;
-    }
-
-    protected void collideWithEntity(Entity par1Entity)
-    {
-        if (par1Entity instanceof IMob && this.getRNG().nextInt(20) == 0)
-        {
-            this.setAttackTarget((EntityLivingBase)par1Entity);
-        }
-
-        super.collideWithEntity(par1Entity);
-    }
-
-    /**
-     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
-     * use this to react to sunlight and start to burn.
-     */
-    public void onLivingUpdate()
-    {
-        super.onLivingUpdate();
-
-        if (this.attackTimer > 0)
-        {
-            --this.attackTimer;
-        }
-
-        if (this.holdRoseTick > 0)
-        {
-            --this.holdRoseTick;
-        }
-
-        if (this.motionX * this.motionX + this.motionZ * this.motionZ > 2.500000277905201E-7D && this.rand.nextInt(5) == 0)
-        {
-            int i = MathHelper.floor_double(this.posX);
-            int j = MathHelper.floor_double(this.posY - 0.20000000298023224D - (double)this.yOffset);
-            int k = MathHelper.floor_double(this.posZ);
-            int l = this.worldObj.getBlockId(i, j, k);
-
-            if (l > 0)
-            {
-                this.worldObj.spawnParticle("tilecrack_" + l + "_" + this.worldObj.getBlockMetadata(i, j, k), this.posX + ((double)this.rand.nextFloat() - 0.5D) * (double)this.width, this.boundingBox.minY + 0.1D, this.posZ + ((double)this.rand.nextFloat() - 0.5D) * (double)this.width, 4.0D * ((double)this.rand.nextFloat() - 0.5D), 0.5D, ((double)this.rand.nextFloat() - 0.5D) * 4.0D);
-            }
-        }
-    }
-
 
 
     /**
@@ -192,7 +230,6 @@ public class EntityWoodKarakuriNingyG extends EntityAnimal{
 
     public boolean attackEntityAsMob(Entity par1Entity)
     {
-        this.attackTimer = 10;
         this.worldObj.setEntityState(this, (byte)4);
         boolean flag = par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), (float)(7 + this.rand.nextInt(15)));
 
@@ -200,47 +237,7 @@ public class EntityWoodKarakuriNingyG extends EntityAnimal{
         {
             par1Entity.motionY += 0.4000000059604645D;
         }
-
-        this.playSound("mob.irongolem.throw", 1.0F, 1.0F);
         return flag;
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void handleHealthUpdate(byte par1)
-    {
-        if (par1 == 4)
-        {
-            this.attackTimer = 10;
-            this.playSound("mob.irongolem.throw", 1.0F, 1.0F);
-        }
-        else if (par1 == 11)
-        {
-            this.holdRoseTick = 400;
-        }
-        else
-        {
-            super.handleHealthUpdate(par1);
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    public int getAttackTimer()
-    {
-        return this.attackTimer;
-    }
-
-    public void setHoldingRose(boolean par1)
-    {
-        this.holdRoseTick = par1 ? 400 : 0;
-        this.worldObj.setEntityState(this, (byte)11);
-    }
-
-    /**
-     * Plays step sound at given x, y, z for the entity
-     */
-    protected void playStepSound(int par1, int par2, int par3, int par4)
-    {
-        this.playSound("mob.irongolem.walk", 1.0F, 1.0F);
     }
 
     /**
@@ -264,22 +261,12 @@ public class EntityWoodKarakuriNingyG extends EntityAnimal{
             this.dropItem(Item.ingotIron.itemID, 1);
         }
     }
-
-    public int getHoldRoseTick()
-    {
-        return this.holdRoseTick;
-    }
-
+    
     /**
      * Called when the mob's health reaches 0.
      */
     public void onDeath(DamageSource par1DamageSource)
     {
-        if (this.attackingPlayer != null && this.villageObj != null)
-        {
-            this.villageObj.setReputationForPlayer(this.attackingPlayer.getCommandSenderName(), -5);
-        }
-
         super.onDeath(par1DamageSource);
     }
 
