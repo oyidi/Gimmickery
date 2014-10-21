@@ -9,7 +9,7 @@ Teammates:
 Contact Information:
 -------------------- 
 
-E-mail: 1030586208@qq.com
+E-mail: 1030586208@qq.com		
        (AsagiPrinny personal E-mail address)	   
 QQ group: 296112111 
          (Hope you can use Chinese internet and know what the QQ is.)
@@ -18,9 +18,9 @@ QQ group: 296112111
 Brief Introduction:
 -------------------
 
-This mod is intended to construct a more pleasure game environment.
+### This mod is intended to construct a more pleasure game environment.
 
-The major part of our mod is the KarakuriNingy(Doll NPC).
+### The major part of our mod is the KarakuriNingy(Doll NPC).
 - There are several types KarakuriNingys you can compose in the game, which determined the materials you chose.
 - Each type of KarakuriNingy has variety functions. 
  Some of them are nice guarders who protect your property; 
@@ -28,7 +28,7 @@ The major part of our mod is the KarakuriNingy(Doll NPC).
  Some of them are genius in architecture,etc.
 -Trying different kinds of items, materials and Construction formulas of KarakuriNingys, you can uncover more mod-experiences.
 
-The second part of this mod is the PowerSourceBlock.
+### The second part of this mod is the PowerSourceBlock.
 - The PowerSourceBlock is the power source for KarakuriNingys. 
  KarakuriNingys will not work until the PowerSourceBlock was involved. 
  The PowerSourceBlock also have many types with different functions.
@@ -39,7 +39,7 @@ Current Status:
 ---------------
 programming...
 
-Mod version #15:
+### Mod version #15:
 
 - KarakuriNingy can successfully spawn in the game world 
  → have the basic type model 
