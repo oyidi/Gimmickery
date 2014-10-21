@@ -6,16 +6,17 @@ Teammates:
 -Gakongren
 -FrostMiKu
 
-Contact Information: 
+Contact Information:
+==================== 
 
 E-mail: 1030586208@qq.com
-       (AsagiPrinny personal E-mail address)
-	   
+       (AsagiPrinny personal E-mail address)	   
 QQ group: 296112111 
          (Hope you can use Chinese internet and know what the QQ is.)
 
 
 Brief Introduction:
+===================
 
 This mod is intended to construct a more pleasure game environment.
 
@@ -35,9 +36,11 @@ The second part of this mod is the PowerSourceBlock.
  Discovering the secret of the PowerSourceBlock and applying it in your game is also a happy mod-experience.
 
 Current Status:
+===============
 programming...
 
 Mod version #15:
+================
 -KarakuriNingy can successfully spawn in the game world 
  → have the basic type model 
  → have the basic movement animations
@@ -55,4 +58,4 @@ Mod version #15:
  • BUG (We already detected the bug of the incorrect result. It counts the PowerSourceBlock though all save files which have established PowerSourceBlocks, in your computer disk.)
  → various types of the PowerSourceBlock’s model and effects *
 
-* Not yet reached.	
+- * Not yet reached.	
