@@ -1,13 +1,13 @@
 Gimmickery Mod For Minecraft
 ============================
-Gimmickery Mod is presented by FrostCraftsman Team.
+Gimmickery Mod is presented by FrostCraftsman Team.		
 Teammates:
 - AsagiPrinny
 - Gakongren
 - FrostMiKu
 
 Contact Information:
-==================== 
+-------------------- 
 
 E-mail: 1030586208@qq.com
        (AsagiPrinny personal E-mail address)	   
@@ -16,7 +16,7 @@ QQ group: 296112111
 
 
 Brief Introduction:
-===================
+-------------------
 
 This mod is intended to construct a more pleasure game environment.
 
@@ -36,7 +36,7 @@ The second part of this mod is the PowerSourceBlock.
  Discovering the secret of the PowerSourceBlock and applying it in your game is also a happy mod-experience.
 
 Current Status:
-===============
+---------------
 programming...
 
 Mod version #15:
