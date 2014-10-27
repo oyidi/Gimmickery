@@ -2,7 +2,7 @@ package net.frostcraftsman.gimmickery.item;
 
 import net.frostcraftsman.gimmickery.Gimmickery;
 import net.frostcraftsman.gimmickery.entity.EntityWoodKarakuriNingyG;
-import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
@@ -19,12 +19,12 @@ public class ItemWoodKarakuriNingyG extends GimmickeryItemBase{
 	
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,EntityPlayer par3EntityPlayer)
-	{
+	{		
 		if(!par2World.isRemote)
 		{
-		EntityWoodKarakuriNingyG entity = new EntityWoodKarakuriNingyG(par2World, par3EntityPlayer.posX, par3EntityPlayer.posY + par3EntityPlayer.getEyeHeight(), par3EntityPlayer.posZ, par3EntityPlayer);
+		EntityWoodKarakuriNingyG entity = new EntityWoodKarakuriNingyG(par2World, par3EntityPlayer.posX, par3EntityPlayer.posY + par3EntityPlayer.getEyeHeight(), par3EntityPlayer.posZ+2, par3EntityPlayer);
 		par2World.spawnEntityInWorld(entity);
-		}
+		}		
 		return par1ItemStack;
     }
 }

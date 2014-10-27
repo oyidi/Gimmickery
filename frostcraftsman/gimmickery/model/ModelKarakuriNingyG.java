@@ -10,13 +10,15 @@
 
 package net.frostcraftsman.gimmickery.model;
 
+import net.frostcraftsman.gimmickery.entity.EntityWoodKarakuriNingyG;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
-public class ModelKarakuriNingyG extends ModelBiped
+public class ModelKarakuriNingyG extends ModelBiped 
 {
+	
   //fields
     ModelRenderer bipedBody;
     ModelRenderer bipedHead;
@@ -519,7 +521,7 @@ public class ModelKarakuriNingyG extends ModelBiped
 
 
 
-      if (this.isRiding)
+      if (this.isRiding == true)
       {
           this.bipedRightArm.rotateAngleX += -((float)Math.PI / 5F);
           this.bipedLeftArm.rotateAngleX += -((float)Math.PI / 5F);
