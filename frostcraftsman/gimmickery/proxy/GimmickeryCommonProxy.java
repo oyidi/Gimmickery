@@ -37,5 +37,18 @@ public class GimmickeryCommonProxy {
      public void registerSound() {
      }
 
+		public static Set<String> languages = new HashSet(); 
+  
+     	static { 
+     		languages.add("zh_CN"); 
+     		languages.add("en_US"); 
+     	} 
+     	 
+     	public void init() { 
+     		for (String lang : languages) { 
+     			LanguageRegistry.instance().loadLocalization( 
+     					"/assets/gimmickery/lang/" + lang + ".properties", lang, false); 
+     		} 
+     	} 
 }
 
